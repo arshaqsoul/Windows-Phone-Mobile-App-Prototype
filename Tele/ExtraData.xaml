@@ -1,0 +1,56 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Tele.ExtraData"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#FF151837">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        
+            <TextBlock x:Name="ApplicationTitle" Text="" Style="{StaticResource PhoneTextNormalStyle}" Margin="24,17,-12,28" />
+            <TextBlock x:Name="PageTitle" Text="&lt;Extra Data" Margin="17,32,-8,642" Style="{StaticResource PhoneTextTitle1Style}" Grid.RowSpan="2" />
+<Canvas Height="5" HorizontalAlignment="Left" Margin="12,135,0,0" Name="canvas1" VerticalAlignment="Top" Width="459" Background="White" Grid.ColumnSpan="2" />
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,21,9,0">
+            <Slider Height="87" HorizontalAlignment="Left" Margin="12,37,0,0" Name="slider1" VerticalAlignment="Top" Width="433" ValueChanged="slider1_ValueChanged" Foreground="#FF007FFF" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="213,94,0,0" Name="textBlock2" Text="" VerticalAlignment="Top" />
+            <TextBlock Height="65" HorizontalAlignment="Left" Margin="40,142,0,0" Name="textBlock3" Text="The following cost is derived based on a charge of Rs.250 per GB" VerticalAlignment="Top" Width="372" TextWrapping="Wrap" TextAlignment="Center" />
+            <TextBox Height="72" HorizontalAlignment="Left" Margin="158,213,0,0" Name="textBox1" Text="Cost in Rs." VerticalAlignment="Top" Width="192" IsEnabled="False" />
+            <TextBlock Height="58" HorizontalAlignment="Left" Margin="106,221,0,0" Name="textBlock4" Text="Rs." VerticalAlignment="Top" FontSize="40" />
+            <Button Content="Confirm" Height="72" HorizontalAlignment="Left" Margin="68,318,0,0" Name="button1" VerticalAlignment="Top" Width="160" Click="button1_Click" BorderBrush="#FF0056A5" />
+            <Button Content="Cancel" Height="72" HorizontalAlignment="Left" Margin="223,318,0,0" Name="button2" VerticalAlignment="Top" Width="160" Click="button2_Click" BorderBrush="#FF0056A5" />
+        </Grid>
+        <HyperlinkButton Height="53" HorizontalAlignment="Left" Margin="12,59,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="58" Click="hyperlinkButton1_Click" />
+        <TextBlock Height="30" HorizontalAlignment="Left" Margin="204,17,0,0" Name="textBlock5" Text="" VerticalAlignment="Top" Width="265" TextAlignment="Right" />
+        <TextBlock Height="30" HorizontalAlignment="Left" Margin="17,12,0,0" Name="textBlock1" Text="Select the required data extension:" VerticalAlignment="Top" Grid.Row="1" />
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

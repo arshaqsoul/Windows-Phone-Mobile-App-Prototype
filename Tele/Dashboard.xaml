@@ -1,0 +1,371 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Tele.Dashboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="768"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="True" xmlns:my="clr-namespace:Microsoft.Phone.Controls.Maps;assembly=Microsoft.Phone.Controls.Maps" Loaded="PhoneApplicationPage_Loaded" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" xmlns:my1="clr-namespace:Microsoft.Advertising.Mobile.UI;assembly=Microsoft.Advertising.Mobile.UI">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="17*" />
+            <RowDefinition Height="751*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="22*" />
+            <ColumnDefinition Width="458*" />
+        </Grid.ColumnDefinitions>
+        <!--Pivot Control-->
+        <controls:Pivot Background="#FF151837" Name="dashPivot" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <!--Pivot item one-->
+            <controls:PivotItem Header="Dashboard     ">
+                <Grid Background="#FF151837">
+                    <HyperlinkButton Height="160" HorizontalAlignment="Left" Margin="42,208,0,0" Name="hyperlinkButton1" Width="180" AllowDrop="False" Click="hyperlinkButton1_Click" VerticalAlignment="Top">
+                        <HyperlinkButton.Background>
+                            <ImageBrush ImageSource="/Tele;component/Images/call.fw.png" />
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton>
+                    <HyperlinkButton Height="160" HorizontalAlignment="Left" Margin="234,208,0,0" Name="hyperlinkButton2" VerticalAlignment="Top" Width="180" Click="hyperlinkButton2_Click">
+                        <HyperlinkButton.Background>
+                            <ImageBrush ImageSource="/Tele;component/Images/wifi.fw.png" />
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton>
+                    <HyperlinkButton Height="160" HorizontalAlignment="Left" Margin="42,385,0,0" Name="hyperlinkButton3" VerticalAlignment="Top" Width="180" Click="hyperlinkButton3_Click">
+                        <HyperlinkButton.Background>
+                            <ImageBrush ImageSource="/Tele;component/Images/tv.fw.png" />
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton>
+                    <HyperlinkButton Height="160" HorizontalAlignment="Left" Margin="234,385,0,0" Name="hyperlinkButton4" VerticalAlignment="Top" Width="180" Click="hyperlinkButton4_Click">
+                        <HyperlinkButton.Background>
+                            <ImageBrush ImageSource="/Tele;component/Images/bill.fw.png" />
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton>
+                    <HyperlinkButton AllowDrop="False" Height="160" HorizontalAlignment="Left" Margin="42,32,0,0" Name="hyperlinkButton6" VerticalAlignment="Top" Width="180" Click="hyperlinkButton6_Click">
+                        <HyperlinkButton.Background>
+                            <ImageBrush ImageSource="/Tele;component/Images/profile.fw.png" />
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton>
+                    <HyperlinkButton AllowDrop="False" Height="160" HorizontalAlignment="Left" Margin="235,32,0,0" Name="hyperlinkButton7" VerticalAlignment="Top" Width="180" Click="hyperlinkButton7_Click">
+                        <HyperlinkButton.Background>
+                            <ImageBrush ImageSource="/Tele;component/Images/mobile.fw.png" />
+                        </HyperlinkButton.Background>
+                    </HyperlinkButton>
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem Header="&lt;Profile          ">
+                <Grid>
+                    <Image Height="200" HorizontalAlignment="Left" Margin="128,-14,0,0" Name="image3" Stretch="Fill" VerticalAlignment="Top" Width="200" Source="/Tele;component/Images/propic.fw.png" />
+                    <TextBlock Height="62" HorizontalAlignment="Left" Margin="117,189,0,0" Name="textBlock1" Text="" VerticalAlignment="Top" FontSize="40" Width="221" TextAlignment="Center" />
+                    <TextBlock FontSize="30" Height="62" HorizontalAlignment="Left" Margin="89,244,0,0" Name="textBlock2" Text="" TextAlignment="Center" VerticalAlignment="Top" Width="279" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="73,309,0,0" Name="textBlock3" Text="Land Line" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="53,343,0,0" Name="textBlock4" Text="" VerticalAlignment="Top" FontSize="25" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="313,308,0,0" Name="textBlock55" Text="Mobile" VerticalAlignment="Top" />
+                    <TextBlock FontSize="25" Height="30" HorizontalAlignment="Left" Margin="250,341,0,0" Name="textBlock56" Text="" VerticalAlignment="Top" />
+                    <TextBlock FontSize="25" Height="30" HorizontalAlignment="Left" Margin="134,425,0,0" Name="textBlock58" Text="" VerticalAlignment="Top" />
+                    <Border BorderBrush="Silver" BorderThickness="1" Height="80" HorizontalAlignment="Left" Margin="228,304,0,0" Name="border1" VerticalAlignment="Top" Width="1" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="203,396,0,0" Name="textBlock57" Text="Email" VerticalAlignment="Top" />
+                    <Button Background="{x:Null}" BorderBrush="#FF0056A5" BorderThickness="3" Content="Feedback" Height="86" HorizontalAlignment="Left" Margin="254,481,0,0" Name="feedbtn" VerticalAlignment="Top" Width="202" Click="feedbtn_Click" />
+                    <Button Background="{x:Null}" BorderBrush="#FF0056A5" BorderThickness="3" Content="Change Password" Height="86" HorizontalAlignment="Left" Margin="1,481,0,0" Name="chngpwbtn" VerticalAlignment="Top" Width="257" />
+                </Grid>
+            </controls:PivotItem>
+            <controls:PivotItem Header="&lt;Mobile         ">
+                <Grid>
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="15,-10,0,0" Name="textBlock59" Text="Credit Balance:" VerticalAlignment="Top" />
+                    <TextBlock Height="67" HorizontalAlignment="Right" Margin="0,16,142,0" Name="textBlock60" Text="57" VerticalAlignment="Top" FontSize="48" Width="137" FontFamily="Segoe WP Semibold" TextAlignment="Right" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="15,88,0,0" Name="textBlock61" Text="Call &amp; SMS Statistics This Month:" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="28,127,0,0" Name="textBlock62" Text="Total Calls" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="165,127,0,0" Name="textBlock63" Text="Total Duration" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="344,127,0,0" Name="textBlock64" Text="Total SMS" VerticalAlignment="Top" />
+                    <Border BorderBrush="Silver" BorderThickness="1" Height="80" HorizontalAlignment="Left" Margin="142,130,0,0" Name="border2" VerticalAlignment="Top" Width="1" />
+                    <Border BorderBrush="Silver" BorderThickness="1" Height="80" HorizontalAlignment="Left" Margin="320,130,0,0" Name="border3" VerticalAlignment="Top" Width="1" />
+                    <TextBlock FontFamily="Segoe WP Semibold" FontSize="36" Height="59" HorizontalAlignment="Left" Margin="10,152,0,0" Name="textBlock65" Text="153" TextAlignment="Center" VerticalAlignment="Top" Width="121" Foreground="#FF0056A5" />
+                    <TextBlock FontFamily="Segoe WP Semibold" FontSize="36" Foreground="#FF0056A5" Height="59" HorizontalAlignment="Left" Margin="159,152,0,0" Name="textBlock66" Text="12h 23m" TextAlignment="Center" VerticalAlignment="Top" Width="138" />
+                    <TextBlock FontFamily="Segoe WP Semibold" FontSize="36" Foreground="#FF0056A5" Height="59" HorizontalAlignment="Left" Margin="327,152,0,0" Name="textBlock67" Text="36" TextAlignment="Center" VerticalAlignment="Top" Width="121" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="13,236,0,0" Name="textBlock69" Text="Mobile Data Statistics This Month:" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="28,272,0,0" Name="textBlock70" Text="Downloads" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="193,272,0,0" Name="textBlock71" Text="Uploads" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="367,272,0,0" Name="textBlock72" Text="Time" VerticalAlignment="Top" />
+                    <TextBlock FontFamily="Segoe WP Semibold" FontSize="36" Foreground="#FF0056A5" Height="59" HorizontalAlignment="Left" Margin="10,299,0,0" Name="textBlock73" Text="932mb" TextAlignment="Center" VerticalAlignment="Top" Width="121" />
+                    <TextBlock FontFamily="Segoe WP Semibold" FontSize="36" Foreground="#FF0056A5" Height="59" HorizontalAlignment="Left" Margin="159,299,0,0" Name="textBlock74" Text="33mb" TextAlignment="Center" VerticalAlignment="Top" Width="138" />
+                    <TextBlock FontFamily="Segoe WP Semibold" FontSize="36" Foreground="#FF0056A5" Height="59" HorizontalAlignment="Left" Margin="327,299,0,0" Name="textBlock75" Text="4h 02m" TextAlignment="Center" VerticalAlignment="Top" Width="121" />
+                    <Border BorderBrush="Silver" BorderThickness="1" Height="80" HorizontalAlignment="Left" Margin="142,275,0,0" Name="border4" VerticalAlignment="Top" Width="1" />
+                    <Border BorderBrush="Silver" BorderThickness="1" Height="80" HorizontalAlignment="Left" Margin="319,275,0,0" Name="border5" VerticalAlignment="Top" Width="1" />
+                    <Border BorderBrush="Silver" BorderThickness="1" Height="1" HorizontalAlignment="Left" Margin="58,214,0,0" Name="border6" VerticalAlignment="Top" Width="348"></Border>
+                    <Border BorderBrush="Silver" BorderThickness="1" Height="1" HorizontalAlignment="Left" Margin="58,359,0,0" Name="border7" VerticalAlignment="Top" Width="348" />
+                    <Button Content="Recharge" Height="72" HorizontalAlignment="Left" Margin="148,541,0,0" Name="button9" VerticalAlignment="Top" Width="160" BorderBrush="#FF0056A5" Click="button9_Click" />
+                    <TextBlock FontFamily="Segoe WP Semibold" FontSize="48" Height="67" HorizontalAlignment="Left" Margin="118,16,0,0" Name="textBlock81" Text="Rs." TextAlignment="Center" VerticalAlignment="Top" Width="73" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="14,380,0,0" Name="textBlock68" Text="Activated Package:" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="46,424,0,0" Name="textBlock76" Text="Data" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Right" Margin="0,424,214,0" Name="textBlock77" Text="Call" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="365,424,0,0" Name="textBlock78" Text="SMS" VerticalAlignment="Top" />
+                    <TextBlock FontFamily="Segoe WP Semibold" FontSize="20" Foreground="#FF0056A5" Height="59" HorizontalAlignment="Left" Margin="8,451,0,0" Name="textBlock79" Text="" TextAlignment="Center" VerticalAlignment="Top" Width="121" TextWrapping="Wrap" />
+                    <TextBlock FontFamily="Segoe WP Semibold" FontSize="20" Foreground="#FF0056A5" Height="59" HorizontalAlignment="Left" Margin="157,451,0,0" Name="textBlock80" Text="" TextAlignment="Center" VerticalAlignment="Top" Width="138" TextWrapping="Wrap" />
+                    <TextBlock FontFamily="Segoe WP Semibold" FontSize="20" Foreground="#FF0056A5" Height="59" HorizontalAlignment="Left" Margin="325,451,0,0" Name="textBlock82" Text="" TextAlignment="Center" VerticalAlignment="Top" Width="121" TextWrapping="Wrap" />
+                    <Border BorderBrush="Silver" BorderThickness="1" Height="80" HorizontalAlignment="Left" Margin="140,427,0,0" Name="border8" VerticalAlignment="Top" Width="1" />
+                    <Border BorderBrush="Silver" BorderThickness="1" Height="80" HorizontalAlignment="Left" Margin="317,427,0,0" Name="border9" VerticalAlignment="Top" Width="1" />
+                    <Border BorderBrush="Silver" BorderThickness="1" Height="1" HorizontalAlignment="Left" Margin="56,511,0,0" Name="border10" VerticalAlignment="Top" Width="348" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="192,380,0,0" Name="textBlock83" Text="" VerticalAlignment="Top" Width="249" />
+                </Grid>
+            </controls:PivotItem>
+            <!--Pivot item two-->
+            <controls:PivotItem Header="&lt;Fixed           ">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="15" />
+                        <RowDefinition Height="592" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="13,-11,0,0" Name="textBlock6" Text="This Month's Charge as of Now:" VerticalAlignment="Top" Grid.RowSpan="2" />
+                    <TextBlock Height="67" HorizontalAlignment="Left" Margin="107,4,0,0" Name="textBlock7" Text="" VerticalAlignment="Top" FontSize="48" Width="243" FontFamily="Segoe WP Semibold" Grid.Row="1" />
+                    <Image Height="269" HorizontalAlignment="Left" Margin="3,123,0,0" Name="image1" Stretch="Fill" VerticalAlignment="Top" Width="451" Grid.Row="1" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="7,405,0,0" Name="textBlock8" Text="" VerticalAlignment="Top" Grid.Row="1" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="15,474,0,0" Name="callpacktext" Text="" VerticalAlignment="Top" Grid.Row="1" />
+                    <Button Content="Details" Height="70" HorizontalAlignment="Left" Margin="181,454,0,0" Name="callDetailsBtn" VerticalAlignment="Top" Width="131" Click="callDetailsBtn_Click" Grid.Row="1" BorderBrush="#FF0056A5" />
+                    <Button Content="Change" Height="71" HorizontalAlignment="Left" Margin="301,453,0,0" Name="callchngBtn" VerticalAlignment="Top" Width="140" Click="callchngBtn_Click" Grid.Row="1" BorderBrush="#FF0056A5" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="14,80,0,0" Name="textBlock9" Text="Monthly Charge History:" VerticalAlignment="Top" Grid.Row="1" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="15,424,0,0" Name="textBlock10" Text="Subscribed Package:" VerticalAlignment="Top" Grid.Row="1" />
+                    <Popup HorizontalAlignment="Stretch" Margin="0" Name="popup1" VerticalAlignment="Stretch" Height="530" Width="390" IsOpen="False" OpacityMask="Red">
+                        <StackPanel Height="530" HorizontalAlignment="Stretch" Margin="0" Name="stackPanel1" VerticalAlignment="Stretch" Width="390">
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="/Tele;component/Images/pop.fw.png" />
+                            </StackPanel.Background>
+                            <TextBlock Name="pophead" FontSize="40" FontWeight="Black" TextAlignment="Center" Margin="0,20" />
+                            <TextBlock Name="popdesc" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" />
+                            <TextBlock Name="popplan" TextAlignment="Center" TextWrapping="Wrap" Width="300" Margin="0,0,0,30" FontSize="20" FontWeight="SemiBold" />
+                            <TextBlock Name="popdesc1" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" />
+                            <TextBlock Name="popplan1" TextAlignment="Center" TextWrapping="Wrap" Width="300" Margin="0,0,0,30" FontWeight="SemiBold" />
+                            <Button Name="popok" Content="Close" Click="popok_Click" />
+                        </StackPanel>
+                    </Popup>
+                    <Popup HorizontalAlignment="Stretch" Margin="0" Name="popup2" VerticalAlignment="Stretch" Height="530" Width="390" IsOpen="False" OpacityMask="Red" Loaded="popup2_Loaded">
+                        <StackPanel Height="530" HorizontalAlignment="Stretch" Margin="0" Name="stackPanel2" VerticalAlignment="Stretch" Width="390">
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="/Tele;component/Images/pop.fw.png" />
+                            </StackPanel.Background>
+                            <TextBlock Name="packhead" FontSize="40" FontWeight="Black" TextAlignment="Center" Margin="0,20" Text="Change Package" />
+                            <TextBlock Name="curpack" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" Text="Change Current Pack From:" />
+                            <TextBlock Name="pack" TextAlignment="Center" TextWrapping="Wrap" Width="300" Margin="0,0,0,30" FontSize="20" FontWeight="SemiBold" />
+                            <TextBlock Name="newpack" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" Text="To" />
+                            <toolkit:ListPicker Width="250" Name="list1">
+                            </toolkit:ListPicker>
+                            <Grid>
+                                <Button Name="packok" Content="Confirm" Width="150" Margin="0,0,150,0" Click="packok_Click" />
+                                <Button Name="packclose" Content="Cancel" Width="150" Margin="150,0,0,0" Click="packclose_Click" />
+                            </Grid>
+                            
+                        </StackPanel>
+                    </Popup>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item three-->
+            <controls:PivotItem Header="&lt;Internet       ">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="607" />
+                        <RowDefinition Height="27*" />
+                    </Grid.RowDefinitions>
+                    <Image Height="240" Margin="-7,26,-7,0" Name="image2" Stretch="Fill" VerticalAlignment="Top" Grid.Row="1" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="14,-12,0,0" Name="textBlock11" Text="This Month's Usage Stats:" VerticalAlignment="Top" Grid.RowSpan="2" />
+                    <ProgressBar Grid.Row="1" Height="31" HorizontalAlignment="Left" Margin="16,360,0,0" Name="progressBar1" VerticalAlignment="Top" Width="417" Foreground="{x:Null}" />
+                    <ProgressBar Grid.Row="1" Height="31" HorizontalAlignment="Left" Margin="16,420,0,0" Name="progressBar2" VerticalAlignment="Top" Width="417" Foreground="{x:Null}" />
+                    <ProgressBar Grid.Row="1" Height="31" HorizontalAlignment="Left" Margin="16,480,0,0" Name="progressBar3" VerticalAlignment="Top" Width="417" Foreground="{x:Null}" AllowDrop="False" />
+                    <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="28,337,0,0" Name="textBlock12" Text="Peak" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="1" HorizontalAlignment="Left" Margin="28,457,0,120" Name="textBlock13" Text="Total" />
+                    <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="27,400,0,0" Name="textBlock14" Text="Off Peak" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="291,339,0,0" Name="textBlock15" Text="" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="288,399,0,0" Name="textBlock16" Text="" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="274,457,0,0" Name="textBlock17" Text="" VerticalAlignment="Top" />
+                    <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="15,551,0,0" Name="textBlock18" Text="" VerticalAlignment="Top" />
+                    <Button Content="Details" Grid.Row="1" Height="70" HorizontalAlignment="Left" Margin="185,531,0,0" Name="button1" VerticalAlignment="Top" Width="131" BorderBrush="#FF0056A5" Click="button1_Click" />
+                    <Button Content="Change" Grid.Row="1" Height="71" HorizontalAlignment="Left" Margin="305,530,0,0" Name="button2" VerticalAlignment="Top" Width="140" BorderBrush="#FF0056A5" Click="button2_Click" />
+                    <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="15,509,0,0" Name="textBlock19" Text="Subscribed Package:" VerticalAlignment="Top" />
+                    <Button Content="Add" Grid.Row="1" Height="70" HorizontalAlignment="Left" Margin="313,259,0,0" Name="button3" VerticalAlignment="Top" Width="131" Click="button3_Click" BorderBrush="#FF0056A5" />
+                    <ProgressBar Foreground="{x:Null}" Grid.Row="1" Height="31" HorizontalAlignment="Left" Margin="15,303,0,0" Name="progressBar4" VerticalAlignment="Top" Width="274" Visibility="Collapsed" />
+                    <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="27,280,0,0" Name="textBlock53" Text="Extra" VerticalAlignment="Top" Visibility="Collapsed" />
+                    <TextBlock Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="179,280,0,0" Name="textBlock54" Text="" VerticalAlignment="Top" Width="Auto" TextAlignment="Right" Visibility="Collapsed" />
+                    <Popup HorizontalAlignment="Stretch" Margin="0" Name="popup4" VerticalAlignment="Stretch" Height="530" Width="390" IsOpen="False" OpacityMask="Red" Loaded="popup4_Loaded">
+                        <StackPanel Height="530" HorizontalAlignment="Stretch" Margin="0" Name="stackPanel4" VerticalAlignment="Stretch" Width="390">
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="/Tele;component/Images/pop.fw.png" />
+                            </StackPanel.Background>
+                            <TextBlock Name="inthead" FontSize="40" FontWeight="Black" TextAlignment="Center" Margin="0,20" Text="Change Package" />
+                            <TextBlock Name="intcurpack" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" Text="Change Current Pack From:" />
+                            <TextBlock Name="intpack" TextAlignment="Center" TextWrapping="Wrap" Width="300" Margin="0,0,0,30" FontSize="20" FontWeight="SemiBold" />
+                            <TextBlock Name="intnewpack" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" Text="To" />
+                            <toolkit:ListPicker Width="250" Name="list3">
+                            </toolkit:ListPicker>
+                            <Grid>
+                                <Button Name="intpackok" Content="Confirm" Width="150" Margin="0,0,150,0" Click="intpackok_Click" />
+                                <Button Name="intpackclose" Content="Cancel" Width="150" Margin="150,0,0,0" Click="intpackclose_Click" />
+                            </Grid>
+
+                        </StackPanel>
+                    </Popup>
+                    <Popup HorizontalAlignment="Stretch" Margin="0" Name="popup7" VerticalAlignment="Stretch" Height="530" Width="390" IsOpen="False" OpacityMask="Red">
+                        <StackPanel Height="530" HorizontalAlignment="Stretch" Margin="0" Name="stackPanel7" VerticalAlignment="Stretch" Width="390">
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="/Tele;component/Images/pop.fw.png" />
+                            </StackPanel.Background>
+                            <TextBlock Name="inthd" FontSize="40" FontWeight="Black" TextAlignment="Center" Margin="0,20" />
+                            <TextBlock Name="intdes" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" />
+                            <TextBlock Name="intplan" TextAlignment="Center" TextWrapping="Wrap" Width="300" Margin="0,0,0,30" FontSize="20" FontWeight="SemiBold" />
+                           <Button Name="intok" Content="Close" Click="intok_Click" />
+                        </StackPanel>
+                    </Popup>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item four-->
+            <controls:PivotItem Header="&lt;PeoTV            " IsEnabled="True">
+                <Grid>
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="16,-12,0,0" Name="textBlock20" Text="Number of Channels:" VerticalAlignment="Top" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="17,493,0,0" Name="textBlock27" Text="Peo Entertainement" VerticalAlignment="Top" />
+                    <Button Content="Details" Height="70" HorizontalAlignment="Left" Margin="187,473,0,0" Name="button4" VerticalAlignment="Top" Width="131" BorderBrush="#FF0056A5" />
+                    <Button Content="Change" Height="71" HorizontalAlignment="Left" Margin="307,472,0,0" Name="button5" VerticalAlignment="Top" Width="140" BorderBrush="#FF0056A5" Click="button5_Click" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="17,451,0,0" Name="textBlock28" Text="Subscribed Package:" VerticalAlignment="Top" />
+                    <TextBlock FontFamily="Segoe WP Semibold" FontSize="48" Height="67" HorizontalAlignment="Left" Margin="93,19,0,0" Name="textBlock21" Text="25 Channels" VerticalAlignment="Top" Width="268" Visibility="Visible" />
+                    <ScrollViewer Height="271" HorizontalAlignment="Left" Margin="4,93,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="453" Visibility="Visible">
+                        <ListBox Height="255" Name="listBox1" Width="452" ItemsSource="{Binding}" Foreground="White">
+                            <ListBoxItem Content="All Local Channels" FontSize="28" />
+                            <ListBoxItem Content="Al-Jazeera" FontSize="28"/>
+                            <ListBoxItem Content="Ten Sports" FontSize="28"/>
+                            <ListBoxItem Content="Espn" FontSize="28" />
+                            <ListBoxItem Content="AXN" FontSize="28"/>
+                            <ListBoxItem Content="HBO" FontSize="28"/>
+                            <ListBoxItem Content="Star Movies" FontSize="28"/>
+                        </ListBox>
+                    </ScrollViewer>
+                    <Button Content="Add" Height="70" HorizontalAlignment="Left" Margin="158,373,0,0" Name="button6" VerticalAlignment="Top" Width="131" Click="button6_Click" BorderBrush="#FF0056A5" />
+                    <TextBlock Height="200" HorizontalAlignment="Left" Margin="51,100,0,0" Name="textBlock29" Text="Sorry You Are Not Subscribed To A PeoTV Package" VerticalAlignment="Top" Width="358" FontSize="30" TextWrapping="Wrap" TextAlignment="Center" Visibility="Collapsed" />
+                    <Button Content="Subscribe" Height="72" HorizontalAlignment="Left" Margin="154,301,0,0" Name="button7" VerticalAlignment="Top" Width="160" Visibility="Collapsed" Click="button7_Click" />
+                    <Popup HorizontalAlignment="Stretch" Margin="0" Name="popup5" VerticalAlignment="Stretch" Height="530" Width="390" IsOpen="False" OpacityMask="Red">
+                        <StackPanel Height="530" HorizontalAlignment="Stretch" Margin="0" Name="stackPanel5" VerticalAlignment="Stretch" Width="390">
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="/Tele;component/Images/pop.fw.png" />
+                            </StackPanel.Background>
+                            <TextBlock Name="tvhead" FontSize="40" FontWeight="Black" TextAlignment="Center" Margin="0,20" />
+                            <TextBlock Name="tvdesc" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" />
+                            <TextBlock Name="tvplan" TextAlignment="Center" TextWrapping="Wrap" Width="300" Margin="0,0,0,30" FontSize="20" FontWeight="SemiBold" />
+                            <Button Name="tvok" Content="Close" Click="popok_Click" />
+                        </StackPanel>
+                    </Popup>
+                    <Popup HorizontalAlignment="Stretch" Margin="0" Name="popup6" VerticalAlignment="Stretch" Height="530" Width="390" IsOpen="False" OpacityMask="Red" Loaded="popup6_Loaded">
+                        <StackPanel Height="530" HorizontalAlignment="Stretch" Margin="0" Name="stackPanel6" VerticalAlignment="Stretch" Width="390">
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="/Tele;component/Images/pop.fw.png" />
+                            </StackPanel.Background>
+                            <TextBlock Name="tvchnghead" FontSize="40" FontWeight="Black" TextAlignment="Center" Margin="0,20" Text="Change Package" />
+                            <TextBlock Name="tvpack" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" Text="Change Current Pack From:" />
+                            <TextBlock Name="tvcurpack" TextAlignment="Center" TextWrapping="Wrap" Width="300" Margin="0,0,0,30" FontSize="20" FontWeight="SemiBold" />
+                            <TextBlock Name="tvnewpack" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" Text="To" />
+                            <toolkit:ListPicker Width="250" Name="list4">
+                            </toolkit:ListPicker>
+                            <Grid>
+                                <Button Name="tvpackok" Content="Confirm" Width="150" Margin="0,0,150,0" Click="tvpackok_Click" />
+                                <Button Name="tvpackclose" Content="Cancel" Width="150" Margin="150,0,0,0" Click="packclose_Click" />
+                            </Grid>
+
+                        </StackPanel>
+                    </Popup>
+                </Grid>
+            </controls:PivotItem>
+
+            <!--Pivot item five-->
+            <controls:PivotItem Header="&lt;Bill                  ">
+                <Grid ShowGridLines="False">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="185" />
+                        <RowDefinition Height="275" />
+                        <RowDefinition Height="154" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="15*" />
+                        <ColumnDefinition Width="290*" />
+                        <ColumnDefinition Width="133*" />
+                        <ColumnDefinition Width="18*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="14,-4,0,0" Name="textBlock22" Text="This Month's Bill as of Now:" VerticalAlignment="Top" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="2,15,0,0" Name="textBlock23" Text="Telephone Charges:" VerticalAlignment="Top" Grid.Column="1" FontWeight="Black" Grid.Row="1" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="2,141,0,0" Name="textBlock24" Text="Internet Charges:" VerticalAlignment="Top" Grid.Column="1" FontWeight="Black" Grid.Row="2" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="2,205,0,0" Name="textBlock25" Text="PeoTv Charges:" VerticalAlignment="Top" Grid.Column="1" FontWeight="Black" Grid.Row="2" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="2,43,0,0" Name="textBlock26" Text="Total Payable:" VerticalAlignment="Top" Grid.Column="1" FontWeight="Black" Grid.Row="3" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="2,53,0,0" Name="textBlock30" Text="" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="2,85,0,0" Name="textBlock31" Text="Domestic Voice Usage" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="2,118,0,0" Name="textBlock32" Text="Discount" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="2,150,0,0" Name="textBlock33" Text="Total Telecharge" VerticalAlignment="Top" Grid.Column="1" Grid.Row="1" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="83,14,0,0" Name="textBlock34" Text="in Rs." VerticalAlignment="Top" Grid.Column="2" Grid.Row="1" FontWeight="Black" Grid.ColumnSpan="2" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="2,175,0,0" Name="textBlock35" Text="" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="2,236,0,0" Name="textBlock36" Text="" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" />
+                    <TextBlock Grid.Column="2" Grid.Row="1" Height="30" HorizontalAlignment="Left" Margin="1,52,0,0" Name="textBlock41" Text="" VerticalAlignment="Top" TextAlignment="Right" Width="130" Foreground="White" />
+                    <TextBlock Foreground="White" Height="30" HorizontalAlignment="Left" Margin="0,85,0,0" Name="textBlock42" Text="" TextAlignment="Right" VerticalAlignment="Top" Width="130" Grid.Column="2" Grid.Row="1" />
+                    <TextBlock Foreground="White" Height="30" HorizontalAlignment="Left" Margin="0,118,0,0" Name="textBlock43" Text="" TextAlignment="Right" VerticalAlignment="Top" Width="130" Grid.Column="2" Grid.Row="1" />
+                    <TextBlock Foreground="White" Height="30" HorizontalAlignment="Left" Margin="0,150,0,0" Name="textBlock44" Text="" TextAlignment="Right" VerticalAlignment="Top" Width="130" Grid.Column="2" Grid.Row="1" />
+                    <TextBlock Foreground="White" Height="30" HorizontalAlignment="Left" Margin="1,175,0,0" Name="textBlock45" Text="" TextAlignment="Right" VerticalAlignment="Top" Width="130" Grid.Column="2" Grid.Row="2" />
+                    <TextBlock Foreground="White" Height="30" HorizontalAlignment="Left" Margin="2,235,0,0" Name="textBlock46" Text="" TextAlignment="Right" VerticalAlignment="Top" Width="130" Grid.Column="2" Grid.Row="2" />
+                    <TextBlock Foreground="White" Height="30" HorizontalAlignment="Left" Margin="0,9,0,0" Name="textBlock50" Text="" TextAlignment="Right" VerticalAlignment="Top" Width="130" Grid.Column="2" Grid.Row="3" />
+                    <TextBlock Height="30" HorizontalAlignment="Left" Margin="2,11,0,0" Name="textBlock51" Text="Balance b/f" VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" />
+                    <TextBlock Foreground="White" Height="30" HorizontalAlignment="Left" Margin="0,42,0,0" Name="textBlock52" Text="" TextAlignment="Right" VerticalAlignment="Top" Width="130" Grid.Column="2" Grid.Row="3" />
+                    <TextBlock FontWeight="Black" Height="30" HorizontalAlignment="Left" Margin="1,0,0,0" Name="textBlock37" Text="Taxes &amp; Levies:" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" />
+                    <TextBlock Grid.Row="2" Height="30" HorizontalAlignment="Left" Margin="1,37,0,0" Name="textBlock38" Text="Telecom Levy @ 25%" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBlock Grid.Row="2" Height="30" HorizontalAlignment="Left" Margin="1,68,0,0" Name="textBlock39" Text="Telecom Levy @ 10%" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBlock Grid.Row="2" Height="30" HorizontalAlignment="Left" Margin="1,104,0,0" Name="textBlock40" Text="CESS" VerticalAlignment="Top" Grid.Column="1" />
+                    <TextBlock Foreground="White" Grid.Column="1" Grid.Row="2" Height="30" HorizontalAlignment="Left" Margin="288,36,0,0" Name="textBlock47" Text="" TextAlignment="Right" VerticalAlignment="Top" Width="130" Grid.ColumnSpan="2" />
+                    <TextBlock Foreground="White" Grid.Column="1" Grid.Row="2" Height="30" HorizontalAlignment="Left" Margin="289,67,0,0" Name="textBlock48" Text="151.98" TextAlignment="Right" VerticalAlignment="Top" Width="130" Grid.ColumnSpan="2" />
+                    <TextBlock Foreground="White" Grid.Column="1" Grid.Row="2" Height="30" HorizontalAlignment="Left" Margin="288,100,0,0" Name="textBlock49" Text="37.43" TextAlignment="Right" VerticalAlignment="Top" Width="130" Grid.ColumnSpan="2" />
+                    <Button Content="Pay Bill" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3" Height="72" HorizontalAlignment="Left" Margin="143,60,0,0" Name="button8" VerticalAlignment="Top" Width="160" BorderBrush="#FF0056A5" Click="button8_Click" />
+                    <Popup HorizontalAlignment="Stretch" Margin="30,0,0,0" Name="popup3" VerticalAlignment="Stretch" Height="530" Width="390" IsOpen="False" OpacityMask="Red" Visibility="Visible" Opened="popup3_Opened">
+                        <StackPanel Height="530" HorizontalAlignment="Stretch" Margin="0" Name="stackPanel3" VerticalAlignment="Stretch" Width="390">
+                            <StackPanel.Background>
+                                <ImageBrush ImageSource="/Tele;component/Images/pop.fw.png" />
+                            </StackPanel.Background>
+                            <TextBlock Name="billhead" FontSize="40" FontWeight="Black" TextAlignment="Center" Margin="0,20" Text="Pay Bill" />
+                            <TextBlock Name="billamt" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" Text="The amount for this month as of now:" TextWrapping="Wrap" />
+                            <TextBlock Name="amt" TextAlignment="Center" TextWrapping="Wrap" Width="300" Margin="0,0,0,10" FontSize="26" FontWeight="SemiBold" />
+                            <TextBlock Name="payamt" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" Text="Enter Amount" />
+                            <TextBox Name ="pamt" TextAlignment="Center" Width="250"/>
+                            <TextBlock Name="payment" TextAlignment="Center" Margin="0,0,0,10" FontSize="23" FontWeight="Bold" Text="Pay Using" />
+                            <toolkit:ListPicker Width="250" Name="list2">
+                            </toolkit:ListPicker>
+                            <Grid>
+                                <Button Name="payok" Content="Pay" Width="150" Margin="0,0,150,0" Click="payok_Click" />
+                                <Button Name="payclose" Content="Cancel" Width="150" Margin="150,0,0,0" Click="payclose_Click" />
+                            </Grid>
+                        </StackPanel>
+                    </Popup>
+                </Grid>
+            </controls:PivotItem>
+        </controls:Pivot>
+        <Canvas Height="5" HorizontalAlignment="Left" Margin="12,118,0,0" Name="canvas1" VerticalAlignment="Top" Width="459" Background="White" Grid.ColumnSpan="2" Grid.Row="1" />
+        <TextBlock Height="30" HorizontalAlignment="Left" Margin="192,0,0,0" Name="textBlock5" Text="" VerticalAlignment="Top" Width="250" Grid.Column="1" TextAlignment="Right" Grid.Row="1" />
+        <HyperlinkButton Height="75" HorizontalAlignment="Left" Margin="12,19,0,0" Name="hyperlinkButton5" VerticalAlignment="Top" Width="62" Click="hyperlinkButton5_Click_1" Grid.ColumnSpan="2" Grid.Row="1" />
+        <HyperlinkButton Grid.Column="1" Grid.Row="1" Height="60" HorizontalAlignment="Left" Margin="375,41,0,0" Name="hyperlinkButton8" VerticalAlignment="Top" Width="77" Click="hyperlinkButton8_Click">
+            <HyperlinkButton.Background>
+                <ImageBrush ImageSource="/Tele;component/Images/logout.fw.png" />
+            </HyperlinkButton.Background>
+        </HyperlinkButton>
+    </Grid>
+
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton x:Name="appbar_button1" IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton x:Name="appbar_button2" IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem x:Name="menuItem1" Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem x:Name="menuItem2" Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+    
+</phone:PhoneApplicationPage>

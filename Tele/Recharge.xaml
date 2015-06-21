@@ -1,0 +1,89 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="Tele.Recharge"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="768" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="True" Loaded="PhoneApplicationPage_Loaded" xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#FF151837">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <TextBlock x:Name="ApplicationTitle" Text="" Style="{StaticResource PhoneTextNormalStyle}" Margin="24,17,-12,28" />
+        <TextBlock x:Name="PageTitle" Text="&lt;Recharge" Margin="17,32,-8,642" Style="{StaticResource PhoneTextTitle1Style}" Grid.RowSpan="2" />
+        <Canvas Height="5" HorizontalAlignment="Left" Margin="12,135,0,0" Name="canvas1" VerticalAlignment="Top" Width="459" Background="White" Grid.ColumnSpan="2" />
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,21,9,0">
+            <TextBlock Height="46" HorizontalAlignment="Left" Margin="4,55,0,0" Name="textBlock2" Text="Rs." VerticalAlignment="Top" FontSize="30" />
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="6,219,0,0" Name="textBlock3" Text="Select Data Card:" VerticalAlignment="Top" Visibility="Collapsed" />
+            <Button Content="Or Get A Data Card" Height="73" HorizontalAlignment="Left" Margin="95,126,0,0" Name="button1" VerticalAlignment="Top" Width="268" VerticalContentAlignment="Center" BorderBrush="#FF0056A5" Click="button1_Click" />
+            <Button Content="Purchase" Height="72" HorizontalAlignment="Left" Margin="273,32,0,0" Name="button2" VerticalAlignment="Top" Width="160" BorderBrush="#FF0056A5" Click="button2_Click" />
+            <ScrollViewer Height="283" HorizontalAlignment="Left" Margin="12,255,0,0" Name="scrollViewer1" VerticalAlignment="Top" Width="441" HorizontalScrollBarVisibility="Auto" Visibility="Collapsed">
+                <Grid Height="280" Name="grid1" Width="736" VerticalAlignment="Top" HorizontalAlignment="Left">
+                    <StackPanel Height="283" HorizontalAlignment="Left" Name="stackPanel1" VerticalAlignment="Top" Width="181" Margin="0" Background="#D50089FF">
+                        <TextBlock Height="70" Name="textBlock4" Text="Rs.499" TextAlignment="Center" FontSize="50" Width="184" />
+                        <TextBlock Height="30" Name="textBlock6" Text="Silver Pack" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock7" Text="3GB Free Data" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock8" Text="50 Minutes free" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock9" Text="25 SMS free" TextAlignment="Center" />
+                        <Button Content="Buy" Height="72" Name="button3" Width="160" Click="button3_Click" />
+                    </StackPanel>
+                    <StackPanel Height="283" HorizontalAlignment="Left" Name="stackPanel2" VerticalAlignment="Top" Width="181" Margin="185,0,0,0" Background="#D50062FF">
+                        <TextBlock FontSize="50" Height="70" Name="textBlock10" Text="Rs.899" TextAlignment="Center" Width="184" />
+                        <TextBlock Height="30" Name="textBlock11" Text="Gold Pack" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock12" Text="5GB Free Data" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock13" Text="100 Minutes free" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock14" Text="50 SMS free" TextAlignment="Center" />
+                        <Button Content="Buy" Height="72" Name="button4" Width="160" Click="button4_Click" />
+                    </StackPanel>
+                    <StackPanel Height="283" HorizontalAlignment="Left" Name="stackPanel3" VerticalAlignment="Top" Width="181" Margin="370,0,0,0" Background="#D50027FF">
+                        <TextBlock FontSize="50" Height="70" Name="textBlock15" Text="Rs.1299" TextAlignment="Center" Width="184" />
+                        <TextBlock Height="30" Name="textBlock16" Text="Platinum Pack" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock17" Text="8GB Free Data" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock18" Text="125 Minutes free" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock19" Text="75 SMS free" TextAlignment="Center" />
+                        <Button Content="Buy" Height="72" Name="button5" Width="160" Click="button5_Click" />
+                    </StackPanel>
+                    <StackPanel Height="283" HorizontalAlignment="Left" Name="stackPanel4" VerticalAlignment="Top" Width="181" Margin="555,0,0,0" Background="#D52700FF">
+                        <TextBlock FontSize="50" Height="70" Name="textBlock20" Text="Rs.1599" TextAlignment="Center" Width="184" />
+                        <TextBlock Height="30" Name="textBlock21" Text="Titanium Pack" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock22" Text="10GB Free Data" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock23" Text="150 Minutes free" TextAlignment="Center" />
+                        <TextBlock Height="30" Name="textBlock24" Text="100 SMS free" TextAlignment="Center" />
+                        <Button Content="Buy" Height="72" Name="button6" Width="160" Click="button6_Click" />
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
+            <toolkit:ListPicker Height="294" HorizontalAlignment="Left" Margin="55,36,0,0" Name="listPicker1" VerticalAlignment="Top" Width="212" ItemCountThreshold="6" />
+        </Grid>
+        <HyperlinkButton Height="53" HorizontalAlignment="Left" Margin="12,59,0,0" Name="hyperlinkButton1" VerticalAlignment="Top" Width="58" Click="hyperlinkButton1_Click" />
+        <TextBlock Height="30" HorizontalAlignment="Left" Margin="204,17,0,0" Name="textBlock5" Text="" VerticalAlignment="Top" Width="265" TextAlignment="Right" />
+        <TextBlock Height="30" HorizontalAlignment="Left" Margin="17,12,0,0" Name="textBlock1" Text="Select Recharge Amount:" VerticalAlignment="Top" Grid.Row="1" />
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
